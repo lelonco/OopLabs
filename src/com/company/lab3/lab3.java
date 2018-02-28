@@ -251,7 +251,7 @@ public class lab3 {
         printMarray(marr);
         System.out.println("Zavd2"+zavd2(marr,2,n,m));
         System.out.println("Zavd3"+zavd3(s));
-        System.out.println("Pascal");
+        System.out.println("pascal");
         int size=10;
         int[][] a = pascalTriangle(size);
         pascalPrint(a,size);
