@@ -1,6 +1,7 @@
 package com.company.lab3;
 
 import com.sun.org.apache.bcel.internal.generic.SWAP;
+import com.sun.xml.internal.ws.api.pipe.NextAction;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -129,9 +130,32 @@ public class lab3 {
      }
      return result;
     }
-    public static int [][] zavd2(int [][]arr, int nRow)
+    public static int [][] zavd2(int [][]arr, int nCol, int col, int row )
     {
-            return arr;
+        int temp=0;
+       // int endPos;
+        System.out.println("///////////////////////////////////////////Result");
+        for(int i=0;i<row;i++)
+        {
+            for(int j=i+1;j<row;j++)
+            if(arr[nCol][i]<arr[nCol][j])
+            {
+               // endPos=i-1;
+                for(int k=0;k<col;k++)
+                {
+                    temp=arr[k][j];
+                    arr[k][j]=arr[k][i];
+                    arr[k][i]=temp;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        return arr;
     }
     public static boolean zavd3(String s)
     {
@@ -152,7 +176,16 @@ public class lab3 {
         }
         return result;
     }
+    public static void printMarray(int array[][])
+    {
 
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
     public static int[][] pascalTriangle(int n) {
         int[][] a = new int[n][];
         for (int i = 0; i < a.length; ++i) {
@@ -198,6 +231,16 @@ public class lab3 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rnd.nextInt(10) + 1;
         }
+        int n=4;
+        int m=4;
+        int [][]marr= new int[n][m];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                marr[i][j]=rnd.nextInt(10)+1;
+            }
+        }
         int numb=2;
         String s="asdsa";
         System.out.println("Array: "+Arrays.toString(arr)+ " Is sotred?:"+isSorted(arr));
@@ -205,10 +248,13 @@ public class lab3 {
         System.out.println("Sorted array: "+Arrays.toString(arr2)+" Is sotred?:"+isSorted(arr2));
         System.out.println("Position of search number("+numb+"): "+find(arr2,numb));
         System.out.println("Zavd1 key=7 "+Arrays.toString(zavd1(arr2,7)));
+        printMarray(marr);
+        System.out.println("Zavd2"+zavd2(marr,2,n,m));
         System.out.println("Zavd3"+zavd3(s));
         System.out.println("Pascal");
         int size=10;
         int[][] a = pascalTriangle(size);
         pascalPrint(a,size);
+
     }
 }
