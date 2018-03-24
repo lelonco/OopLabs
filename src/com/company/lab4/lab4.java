@@ -3,7 +3,8 @@ package com.company.lab4;
 public class lab4 {
 
     public static void main(String[] args) {
-        SolveEquation solveEquation=new SolveEquation();
-        System.out.println(solveEquation.solve(-10,10,0.001));
+       FastPow fastPow=new FastPow();
+        System.out.println(fastPow.fastPowIter(2,2));
+       // System.out.println(fastPow.count);
     }
 }
