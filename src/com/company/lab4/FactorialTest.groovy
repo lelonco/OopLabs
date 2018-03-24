@@ -14,16 +14,12 @@ class FactorialTest extends groovy.util.GroovyTestCase {
     @Test
     public void testFact01()
     {
-        assertEquals(1,factorial.fact(0));
+        assertEquals(new BigInteger("1"),factorial.fact(new BigInteger("0")));
     }
     @Test
     public void testFact02()
     {
-        assertEquals(120,factorial.fact(5));
+        assertEquals(new BigInteger("120"),factorial.fact(new BigInteger("5")));
     }
-    @Test(expected = IllegalArgumentException.class)
-    public void testFact03()
-    {
-        factorial.fact(-1);
-    }
+
 }

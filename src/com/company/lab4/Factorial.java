@@ -1,20 +1,19 @@
 package com.company.lab4;
 
+import java.math.BigInteger;
+
 public class Factorial {
-    public int fact(int numb)
+    public BigInteger fact(BigInteger numb)
     {
-        if(numb<0)
+        if(numb.equals(BigInteger.ZERO))
         {
-            throw new IllegalArgumentException();
-        }
-        if(numb>1)
-        {
-            return numb*fact(--numb);
+            return BigInteger.valueOf(1);
         }
         else
         {
-            return 1;
+            return numb.multiply(fact(numb.subtract(BigInteger.ONE)));
         }
+
     }
 }
 
