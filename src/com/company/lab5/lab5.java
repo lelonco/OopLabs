@@ -19,5 +19,10 @@ public class lab5 {
         System.out.println(sortList.sortList(list));
         GetLength length=new GetLength();
         System.out.println(length.size(list));
+        Vector v1= new Vector();
+        Vector v2= new Vector();
+        v1.setCoordinatesVector(3,4);
+        v2.setCoordinatesVector(4,3);
+        System.out.println(v1.getAngleBetweenVector(v2));
     }
 }

@@ -9,7 +9,7 @@ public class GetLength {
         int length=0;//
         for(int i:inputList)
         {
-            length=i;
+            length++;
         }
         return length;
     }
