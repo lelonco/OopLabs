@@ -74,16 +74,12 @@ public class OneLinkedList {
     public void invert() {
         List<Integer> list = new ArrayList<>();
         OneLinkedNode node = root;
-        while (node != null) {
-            list.add(node.getData());
-            node = node.next();
-        }
-        node = root;
-        int i = 1;
-        while (node != null) {
-            node.setData(list.get(list.size() - i));
-            i++;
-            node = node.next();
+        int size=getSize()/2;
+        int count=0;
+        while (size>count) {
+            addFirst(getLast());
+            removeLast();
+            count++;
         }
     }
     public void sort() {
