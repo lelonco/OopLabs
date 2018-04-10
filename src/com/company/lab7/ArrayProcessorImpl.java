@@ -28,7 +28,7 @@ public class ArrayProcessorImpl  implements  ArrayDoubleProcessor{
         return res;
     }
     @Override
-    public  double[] filter(double []arr, DoublePredicate predicate)
+    public  double[] filter(double []arr, Predicate predicate)
     {
         int j=0;
         double [] tempArr=new double[arr.length];

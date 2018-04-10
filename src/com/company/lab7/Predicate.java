@@ -1,5 +1,6 @@
 package com.company.lab7;
 
-public interface DoublePredicate {
+public interface Predicate {
     boolean accept(double a);
 }
+
