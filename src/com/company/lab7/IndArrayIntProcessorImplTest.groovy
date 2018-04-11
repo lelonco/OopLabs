@@ -5,14 +5,14 @@ import org.junit.Test
 class IndArrayIntProcessorImplTest extends GroovyTestCase {
     ArrayIntProcess process= new IndArrayIntProcessorImpl();
     int [] arr=[1,2,-5,10]
-
-    if()
+    File arrFile= new File(System.getProperty("user.dir")+"/arrFile.txt");
     @Test
     void testAvgArray() {
         assertEquals(1.5,process.avg(arr));
     }
     @Test
     void testAvgFile() {
+        assertEquals(1.5,process.avg(arrFile))
     }
     @Test
     void testAceptToArray() {
@@ -21,5 +21,7 @@ class IndArrayIntProcessorImplTest extends GroovyTestCase {
     }
     @Test
     void testAcceptToFile() {
+        assertEquals((new File("FileResult.txt")),process.acceptToFile(arrFile,{i-> i>0}))
+
     }
 }
