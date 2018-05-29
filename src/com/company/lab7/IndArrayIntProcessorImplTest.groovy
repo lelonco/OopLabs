@@ -8,11 +8,11 @@ class IndArrayIntProcessorImplTest extends GroovyTestCase {
     File arrFile= new File(System.getProperty("user.dir")+"/arrFile.txt");
     @Test
     void testAvgArray() {
-        assertEquals(1.5,process.avg(arr));
+        assertEquals(2.0,process.avg(arr));
     }
     @Test
     void testAvgFile() {
-        assertEquals(1.5,process.avg(arrFile))
+        assertEquals(2.0,process.avg(arrFile))
     }
     @Test
     void testAceptToArray() {
